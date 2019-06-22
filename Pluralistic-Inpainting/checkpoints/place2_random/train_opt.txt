@@ -1,0 +1,42 @@
+--------------Options--------------
+batchSize: 16
+beta1: 0.5
+checkpoints_dir: ./checkpoints
+continue_train: True
+display_freq: 100
+display_id: 1
+display_port: 7421
+display_single_pane_ncols: 0
+display_winsize: 256
+fineSize: [256, 256]
+gan_mode: lsgan
+gpu_ids: 0
+img_file: ../../data_256
+isTrain: True
+iter_count: 1
+lambda_g: 1.0
+lambda_kl: 20.0
+lambda_rec: 20.0
+loadSize: [266, 266]
+lr: 2e-05
+lr_policy: lambda
+mask_file: none
+mask_type: [4]
+model: pluralistic
+nThreads: 8
+name: place2_random
+niter: 5000000
+niter_decay: 0
+no_augment: False
+no_flip: False
+no_html: False
+no_rotation: False
+no_shuffle: False
+output_scale: 4
+print_freq: 100
+resize_or_crop: 
+save_iters_freq: 10000
+save_latest_freq: 1000
+train_paths: two
+which_iter: latest
+----------------End----------------

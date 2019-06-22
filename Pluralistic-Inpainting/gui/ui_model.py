@@ -9,7 +9,15 @@ from utils import task, util
 from dataloader.image_folder import make_dataset
 from model import create_model
 from utils.visualizer import Visualizer
+from IPython import embed
+import torchvision.utils as vutils
 
+
+def denormalize(x):
+    return x.add_(1).mul_(0.5)
+
+def save_img_test(input_imgs, fname='test.png'):
+    vutils.save_image(denormalize(input_imgs).data, fname)
 
 class ui_model(QtWidgets.QWidget, Ui_Form):
     shape = 'line'
@@ -200,6 +208,7 @@ class ui_model(QtWidgets.QWidget, Ui_Form):
         # transform the image to the tensor
         img = self.transform(self.img)
         value = self.comboBox.currentIndex()
+        print(value)
         if value > 4:
             mask = torch.autograd.Variable(self.transform(pil_im)).unsqueeze(0)
             # mask from the random mask
@@ -211,6 +220,7 @@ class ui_model(QtWidgets.QWidget, Ui_Form):
         if len(self.opt.gpu_ids) > 0:
             img = img.unsqueeze(0).cuda(self.opt.gpu_ids[0], async=True)
             mask = mask.cuda(self.opt.gpu_ids[0], async=True)
+        # embed()
 
         # get I_m and I_c for image with mask and complement regions for training
         mask = mask
@@ -240,6 +250,8 @@ class ui_model(QtWidgets.QWidget, Ui_Form):
                 score =self.model.net_D(self.img_out).mean()
                 self.label_6.setText(str(round(score.item(),3)))
                 self.PaintPanel.iteration += 1
+
+                embed()
 
         self.show_result_flag = True
         self.show_result()

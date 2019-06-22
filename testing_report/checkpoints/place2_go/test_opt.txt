@@ -1,0 +1,31 @@
+--------------Options--------------
+batchSize: 1
+checkpoints_dir: ./checkpoints
+display_id: 1
+display_port: 8617
+display_single_pane_ncols: 0
+display_winsize: 256
+fineSize: [256, 256]
+gpu_ids: -1
+how_many: 50
+img_file: ../Pluralistic-Inpainting/datasets/place2/Places365_val_00003295.jpg
+isTrain: False
+loadSize: [266, 266]
+mask_file: none
+mask_type: [4]
+model: pluralistic
+nThreads: 8
+name: place2_go
+no_augment: False
+no_flip: False
+no_rotation: False
+no_shuffle: False
+nsampling: 50
+ntest: inf
+output_scale: 4
+phase: test
+resize_or_crop: 
+results_dir: ./results/
+save_number: 10
+which_iter: latest
+----------------End----------------

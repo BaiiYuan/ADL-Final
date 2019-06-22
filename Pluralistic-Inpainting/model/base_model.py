@@ -37,6 +37,7 @@ class BaseModel():
         if self.isTrain:
             self.schedulers = [base_function.get_scheduler(optimizer, opt) for optimizer in self.optimizers]
         if not self.isTrain or opt.continue_train:
+            print("loading model...")
             self.load_networks(opt.which_iter)
 
     def eval(self):
