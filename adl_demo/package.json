@@ -8,7 +8,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-image-scroller": "^0.3.0",
-    "react-native": "^0.59.9",
+    "react-native": "^0.62.3",
     "react-scripts": "3.0.1",
     "reactstrap": "^8.0.0"
   },
